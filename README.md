@@ -2,7 +2,7 @@
 
 To creat Database
 
-Run the datascript.sql
+Run the Database scripts/datascript.sql
 I have inserted TaxType table
 
 Id	Name
