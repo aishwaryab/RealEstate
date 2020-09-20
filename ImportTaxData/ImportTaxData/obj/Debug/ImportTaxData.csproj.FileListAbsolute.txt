@@ -1,0 +1,12 @@
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\bin\Debug\ImportTaxData.exe.config
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\bin\Debug\ImportTaxData.exe
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\bin\Debug\ImportTaxData.pdb
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\obj\Debug\ImportTaxData.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\obj\Debug\ImportTaxData.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\obj\Debug\ImportTaxData.exe
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\obj\Debug\ImportTaxData.pdb
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\source\repos\ImportTaxData\ImportTaxData\obj\Debug\ImportTaxData.csproj.CopyComplete
