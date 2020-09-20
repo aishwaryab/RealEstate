@@ -35,6 +35,9 @@ Note: If taxType is not 1,2,3, or 4, then data will not be inserted for that rwo
 ********************************************************
 RealEstateManagement solution
 
+Sometimes-- System.Xml.Linq is not downloading automatically though it is registered in package.config-- Please install in nuget manager
+Please change the Data source in web.config if you are not using local server --I have configured local machine server
+
 two endpoints are available
 
 1) to get the data from database
