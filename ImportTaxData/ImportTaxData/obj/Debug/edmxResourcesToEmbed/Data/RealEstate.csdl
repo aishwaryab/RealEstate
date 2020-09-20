@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RealEstateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Municipality">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MunicipalityName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="MunicipalityTaxes" Relationship="Self.FK__Municipal__Munic__403A8C7D" FromRole="Municipality" ToRole="MunicipalityTaxes" />
+  </EntityType>
+  <EntityType Name="MunicipalityTax">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MunicipalityId" Type="Byte" Nullable="false" />
+    <Property Name="TaxType" Type="Byte" Nullable="false" />
+    <Property Name="TaxDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Tax" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Municipality" Relationship="Self.FK__Municipal__Munic__403A8C7D" FromRole="MunicipalityTaxes" ToRole="Municipality" />
+    <NavigationProperty Name="TaxType1" Relationship="Self.FK__Municipal__TaxTy__412EB0B6" FromRole="MunicipalityTaxes" ToRole="TaxType" />
+  </EntityType>
+  <EntityType Name="TaxType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MunicipalityTaxes" Relationship="Self.FK__Municipal__TaxTy__412EB0B6" FromRole="TaxType" ToRole="MunicipalityTaxes" />
+  </EntityType>
+  <Association Name="FK__Municipal__Munic__403A8C7D">
+    <End Role="Municipality" Type="Self.Municipality" Multiplicity="1" />
+    <End Role="MunicipalityTaxes" Type="Self.MunicipalityTax" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipality">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MunicipalityTaxes">
+        <PropertyRef Name="MunicipalityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Municipal__TaxTy__412EB0B6">
+    <End Role="TaxType" Type="Self.TaxType" Multiplicity="1" />
+    <End Role="MunicipalityTaxes" Type="Self.MunicipalityTax" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaxType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MunicipalityTaxes">
+        <PropertyRef Name="TaxType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RealEstateEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Municipalities" EntityType="Self.Municipality" />
+    <EntitySet Name="MunicipalityTaxes" EntityType="Self.MunicipalityTax" />
+    <EntitySet Name="TaxTypes" EntityType="Self.TaxType" />
+    <AssociationSet Name="FK__Municipal__Munic__403A8C7D" Association="Self.FK__Municipal__Munic__403A8C7D">
+      <End Role="Municipality" EntitySet="Municipalities" />
+      <End Role="MunicipalityTaxes" EntitySet="MunicipalityTaxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Municipal__TaxTy__412EB0B6" Association="Self.FK__Municipal__TaxTy__412EB0B6">
+      <End Role="TaxType" EntitySet="TaxTypes" />
+      <End Role="MunicipalityTaxes" EntitySet="MunicipalityTaxes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
